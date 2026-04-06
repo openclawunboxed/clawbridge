@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "claude code task envelope",
+  "type": "object",
+  "required": [
+    "objective",
+    "cwd",
+    "constraints",
+    "deliverables",
+    "review_gate",
+    "return_format"
+  ],
+  "properties": {
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cwd": {
+      "type": "string",
+      "minLength": 1,
+      "description": "absolute path on the claude host"
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deliverables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_gate": {
+      "type": "string",
+      "description": "what must be checked before the result is accepted"
+    },
+    "return_format": {
+      "type": "string",
+      "description": "how the result should be reported back"
+    },
+    "model_hint": {
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

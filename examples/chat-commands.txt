@@ -1,0 +1,8 @@
+/acp doctor
+/acp spawn claude --bind here
+/acp status
+/acp steer tighten scope to the requested files and continue
+/acp model anthropic/claude-opus-4-6
+/acp permissions default
+/acp timeout 900
+/acp close

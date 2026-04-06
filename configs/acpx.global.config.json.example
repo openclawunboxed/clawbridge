@@ -1,0 +1,8 @@
+{
+  "defaultAgent": "claude",
+  "defaultPermissions": "approve-all",
+  "nonInteractivePermissions": "fail",
+  "ttl": 300,
+  "timeout": 1800,
+  "format": "text"
+}

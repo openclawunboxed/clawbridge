@@ -1,0 +1,56 @@
+{
+  // paste the parts you need into ~/.openclaw/openclaw.json
+  agents: {
+    list: [
+      {
+        id: "claude",
+        runtime: {
+          type: "acp",
+          acp: {
+            agent: "claude",
+            backend: "acpx",
+            mode: "persistent",
+            cwd: "/absolute/path/to/your/repo",
+          },
+        },
+      },
+    ],
+  },
+
+  // optional. direct-bind a conversation or thread to the claude acp agent.
+  bindings: [
+    {
+      type: "acp",
+      agentId: "claude",
+      match: {
+        channel: "telegram",
+        accountId: "default",
+        peer: {
+          kind: "group",
+          id: "-1001234567890:topic:42",
+        },
+      },
+      acp: {
+        label: "claude-bridge-main",
+        cwd: "/absolute/path/to/your/repo",
+      },
+    },
+  ],
+
+  plugins: {
+    entries: {
+      acpx: {
+        enabled: true,
+        config: {
+          // default acpx harness permission policy for non-interactive acp sessions
+          permissionMode: "approve-all",
+          nonInteractivePermissions: "fail",
+
+          // optional. off by default. only enable this if you trust the already-enabled
+          // plugin tool surface on the gateway.
+          pluginToolsMcpBridge: false,
+        },
+      },
+    },
+  },
+}

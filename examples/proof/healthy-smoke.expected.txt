@@ -1,0 +1,18 @@
+expected healthy smoke result
+
+input
+reply with exactly live-acp-claude-ok
+
+expected assistant output
+live-acp-claude-ok
+
+what this proves
+- the claude acp session is live
+- the bound conversation can reach the harness
+- the bridge path is functioning at the lowest useful level
+
+what this does not prove
+- write permissions are correct
+- shell exec permissions are correct
+- repo cwd is correct
+- your real task contract is good enough

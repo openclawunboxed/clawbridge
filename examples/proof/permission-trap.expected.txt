@@ -1,0 +1,13 @@
+expected permission-trap pattern
+
+symptom
+first real repo task dies on file write or shell exec
+
+common cause
+openclaw acpx plugin permissions still behave like a planning session
+
+doc-backed fix path
+- set plugins.entries.acpx.config.permissionMode to approve-all for full repo work
+- or set nonInteractivePermissions to deny for graceful degradation instead of hard failure
+- restart the gateway
+- rerun the smoke test and then rerun the task
